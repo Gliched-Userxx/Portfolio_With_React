@@ -1,0 +1,130 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+}
+
+.contact-intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: -8px 0 28px;
+}
+
+.contact-channels {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-channels li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 0;
+  border-top: 1px solid var(--grid-line);
+}
+
+.contact-channels li:first-child {
+  border-top: none;
+}
+
+.contact-channel-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+}
+
+.contact-channels a {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--ink);
+  width: fit-content;
+  border-bottom: 1px solid transparent;
+}
+
+.contact-channels a:hover {
+  border-bottom-color: var(--rust);
+  color: var(--rust);
+}
+
+.contact-form {
+  border: 1px solid var(--ink);
+  padding: 28px;
+  background: rgba(247, 245, 240, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-field label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+.contact-field input,
+.contact-field textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.contact-field input[aria-invalid="true"],
+.contact-field textarea[aria-invalid="true"] {
+  border-color: var(--rust);
+}
+
+.contact-error {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--rust);
+}
+
+.contact-submit {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  background: var(--blueprint);
+  color: var(--paper);
+  border: 1px solid var(--blueprint);
+  border-radius: var(--radius);
+  padding: 12px 22px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.contact-submit:hover {
+  background: var(--blueprint-deep);
+}
+
+.contact-status {
+  margin: 0;
+  min-height: 1.2em;
+  font-size: 0.85rem;
+  color: var(--blueprint-deep);
+}
+
+@media (max-width: 860px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
