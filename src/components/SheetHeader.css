@@ -1,0 +1,67 @@
+.sheet-header {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 28px;
+  border-bottom: 1.5px solid var(--ink);
+  margin-bottom: 40px;
+}
+
+.sheet-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.5px;
+  height: 2px;
+  background: var(--rust);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: sheet-line-draw 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes sheet-line-draw {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet-header::after {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+.sheet-header-num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--rust);
+  border: 1px solid var(--rust);
+  padding: 4px 8px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.sheet-header-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 6px;
+}
+
+.sheet-header-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.05;
+}
+
+@media (max-width: 640px) {
+  .sheet-header {
+    gap: 12px;
+  }
+}
