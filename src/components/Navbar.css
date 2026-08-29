@@ -1,0 +1,207 @@
+.toolbar {
+  width: 264px;
+  flex-shrink: 0;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.toolbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(247, 245, 240, 0.14);
+}
+
+.compass-mark {
+  color: var(--rust);
+  flex-shrink: 0;
+}
+
+.toolbar-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.toolbar-role {
+  margin: 2px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+.toolbar-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 28px 0 14px;
+}
+
+.toolbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toolbar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: rgba(247, 245, 240, 0.72);
+  padding: 13px 10px;
+  min-height: 44px;
+  border-left: 2px solid transparent;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.toolbar-link:hover {
+  color: var(--paper);
+  background: rgba(247, 245, 240, 0.06);
+}
+
+.toolbar-link.is-active {
+  color: var(--paper);
+  border-left-color: var(--rust);
+  background: rgba(247, 245, 240, 0.08);
+}
+
+.toolbar-link-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--rust);
+}
+
+.toolbar-footer {
+  padding-top: 20px;
+  border-top: 1px solid rgba(247, 245, 240, 0.14);
+}
+
+.toolbar-scale {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  margin: 0 0 14px;
+}
+
+.toolbar-download {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-decoration: none;
+  color: var(--paper);
+  background: rgba(247, 245, 240, 0.08);
+  border: 1px solid rgba(247, 245, 240, 0.25);
+  border-radius: var(--radius);
+  padding: 9px 12px;
+  margin-bottom: 12px;
+  text-align: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.toolbar-download:hover {
+  background: rgba(196, 98, 45, 0.16);
+  border-color: var(--rust);
+}
+
+.toolbar-resume {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--paper);
+  border-bottom: 1px solid var(--rust);
+  padding-bottom: 2px;
+}
+
+.toolbar-resume:hover {
+  color: var(--rust);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-backdrop {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(27, 36, 48, 0.5);
+    z-index: 20;
+  }
+
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    top: 14px;
+    left: 16px;
+    z-index: 40;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    min-height: 44px;
+    cursor: pointer;
+  }
+
+  .nav-toggle-bar {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: var(--paper);
+  }
+
+  .nav-toggle-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .toolbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    z-index: 30;
+    width: 78vw;
+    max-width: 300px;
+  }
+
+  .toolbar.is-open {
+    transform: translateX(0);
+    box-shadow: 8px 0 24px rgba(0, 0, 0, 0.25);
+  }
+}

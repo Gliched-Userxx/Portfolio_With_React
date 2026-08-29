@@ -1,0 +1,121 @@
+.skills-intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 62ch;
+  margin: -12px 0 36px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.skills-group {
+  background: var(--paper);
+  padding: 24px 28px;
+}
+
+.skills-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.skills-group-code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--paper);
+  background: var(--blueprint);
+  padding: 2px 8px;
+}
+
+.skills-group-label {
+  font-size: 1.1rem;
+}
+
+.skills-group-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills-group-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.skills-tick {
+  width: 6px;
+  height: 6px;
+  background: var(--rust);
+  flex-shrink: 0;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 720px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills-education {
+  margin-top: 40px;
+  border: 1px solid var(--ink);
+  border-top: none;
+  padding: 24px 28px;
+}
+
+.skills-education-title {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  margin: 0 0 16px;
+}
+
+.skills-education-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.skills-education-list li {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--grid-line);
+}
+
+.skills-education-list li:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.skills-education-degree {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.skills-education-meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
